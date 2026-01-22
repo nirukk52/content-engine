@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+:root {
+  --background: #fafafa;
+  --foreground: #171717;
+  --unfocused-border-color: #e5e5e5;
+  --focused-border-color: #171717;
+  --muted: #737373;
+  --accent: #2563eb;
+  --accent-foreground: #fff;
+
+  --button-disabled-color: #f5f5f5;
+  --disabled-text-color: #a3a3a3;
+
+  --geist-border-radius: 12px;
+  --geist-quarter-pad: 6px;
+  --geist-half-pad: 12px;
+  --geist-pad: 24px;
+  --geist-font: "Inter";
+
+  --geist-error: #dc2626;
+  --geist-success: #16a34a;
+
+  --subtitle: #525252;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #fafafa;
+    --unfocused-border-color: #262626;
+    --focused-border-color: #525252;
+    --muted: #a3a3a3;
+    --accent: #3b82f6;
+    --accent-foreground: #fff;
+
+    --button-disabled-color: #171717;
+    --disabled-text-color: #525252;
+    --geist-error: #ef4444;
+    --geist-success: #22c55e;
+
+    --subtitle: #a3a3a3;
+  }
+}
+
+@theme {
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --color-unfocused-border-color: var(--unfocused-border-color);
+  --color-focused-border-color: var(--focused-border-color);
+  --color-button-disabled-color: var(--button-disabled-color);
+  --color-disabled-text-color: var(--disabled-text-color);
+  --color-geist-error: var(--geist-error);
+  --color-geist-success: var(--geist-success);
+  --color-subtitle: var(--subtitle);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --padding-geist-quarter: var(--geist-quarter-pad);
+  --padding-geist-half: var(--geist-half-pad);
+  --padding-geist: var(--geist-pad);
+  --spacing-geist: var(--geist-pad);
+  --spacing-geist-half: var(--geist-half-pad);
+  --spacing-geist-quarter: var(--geist-quarter-pad);
+  --radius-geist: var(--geist-border-radius);
+  --font-geist: var(--geist-font);
+  --animate-spinner: spinner 1.2s linear infinite;
+  --animate-pulse-subtle: pulse-subtle 2s ease-in-out infinite;
+
+  @keyframes spinner {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0.15;
+    }
+  }
+
+  @keyframes pulse-subtle {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.7;
+    }
+  }
+}
+
+/* Custom scrollbar for dark mode */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--unfocused-border-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--focused-border-color);
+}
